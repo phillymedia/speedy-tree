@@ -1,0 +1,78 @@
+<div class="graphicWrapper">
+  <h3 class="heading">Speedy Morris: The Man at the Center of Philly Hoops</h3>
+  <p class="description">At least 23 current basketball coaches have played for or coached or managed under Speedy Morris.</p>
+  <p class="description">Here is how they are connected to him.</p>
+
+
+  <div id="graphic_desktop">
+
+
+    <div class="labels">
+      <span id="rch_label">Roman Catholic High</span>
+      <span id="penn_label">Penn Charter</span>
+      <span id="lsu_label">La Salle University</span>
+      <span id="sjp_label">St. Joseph’s Prep</span>
+    </div>
+    <ul class="circle back">
+      {% for item in data %}
+      <li class="back-splice {% if item.group == 'Roman Catholic High' %} rch_group {% endif %}{% if item.group == 'Penn Charter' %} penn_group {% endif %}{% if item.group == 'La Salle University' %} lsu_group {% endif %}{% if item.group == 'St. Joseph’s Prep' %} sjp_group {% endif %}"
+        data-group="{{item.group}}" data-name="{{item.name}}" data-connection="{{item.connection}}" data-status="{{item.status}}" data-image="{{item.image}}">
+      </li>
+      {% endfor %}
+    </ul>
+
+    <ul class="circle front">
+      <!-- <div id="img-display"></div>
+        <div id="text-display">
+          <div id="text-holder"><span class="name"></span> the <span class="status"></span> <span class="connection"></span> Speedy Morris</div>
+        </div> -->
+      {% for item in data %}
+      <li class=front-splice
+        "{% if item.group == 'Roman Catholic High' %} rch_group {% endif %}{% if item.group == 'Penn Charter' %} penn_group {% endif %}{% if item.group == 'La Salle University' %} lsu_group {% endif %}{% if item.group == 'St. Joseph’s Prep' %} sjp_group {% endif %}" data-group="{{item.group}}" data-name="{{item.name}}" data-connection="{{item.connection}}" data-status="{{item.status}}" data-image="{{item.image}}">
+        <div class="text-wrap">
+          <div class="text {{item.flip}}">{{item.name}}</div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    <div id="img-display"></div>
+    <div id="text-display">
+      <div id="text-default">The <span>coaching legacy</span> of <span>Speedy Morris</span></div>
+      <div id="text-holder"><span class="name"></span>, the <span class="status"></span>, <span class="connection"></span> Speedy Morris at <span class="group"></span>.</div>
+    </div>
+    <div class="circle display">
+
+    </div>
+  </div>
+
+  <div id="graphic_mobile">
+    <div id=drop-holder>
+      <div class="instruct"><span>Choose a school and name combination to view the connection</span></div>
+      <div class="row">
+        <span>School: </span><select id="group-select">
+          <option id="all">View All</option>
+      <option id="rch_group">Roman Catholic High</option>
+      <option id="penn_group">Penn Charter</option>
+      <option id="lsu_group">La Salle University</option>
+      <option id="sjp_group">St. Joseph’s Prep</option>
+    </select>
+      </div>
+      <div class="row">
+        <span>Name: </span><select id="name-select">
+      {% for item in data %}
+      <option class="all option {% if item.group == 'Roman Catholic High' %} rch_group {% endif %}{% if item.group == 'Penn Charter' %} penn_group {% endif %}{% if item.group == 'La Salle University' %} lsu_group {% endif %}{% if item.group == 'St. Joseph’s Prep' %} sjp_group {% endif %}" data-group="{{item.group}}" data-name="{{item.name}}" data-connection="{{item.connection}}" data-status="{{item.status}}" data-image="{{item.image}}">{{item.name}}</option>
+      {% endfor %}
+    </select>
+      </div>
+    </div>
+    <div id="image-holder"></div>
+    <div id="chatter-holder">
+      <div id="text-holder-holder"><span class="name-holder"></span>, the <span class="status-holder"></span>, <span class="connection-holder"></span> Speedy Morris at <span class="group-holder"></span>.</div>
+    </div>
+
+  </div>
+
+  <div class="source">Photo sources: File photographs; Getty images; photos supplied by teams listed</div>
+  <div class="source credit">Credit: JARED WHALEN / Staff</div>
+
+</div>

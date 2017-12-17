@@ -1,0 +1,88 @@
+@import 'philly-styles/values';
+
+#graphic_mobile {
+  margin-top: 20px;
+  display: none;
+  @include d_550 {
+    display: block;
+  }
+}
+
+.instruct {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+  border-bottom:1px solid #ddd;
+}
+
+
+
+.instruct span {
+  font-style: italic;
+}
+
+#drop-holder {
+  padding: 10px 0;
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+}
+
+.row {
+  display: flex;
+  padding: 5px 0;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.row span {
+  padding-right: 5px;
+  width: 20%;
+}
+
+.row select {
+      width: 80%;
+      font-size: 16px;
+      float: right;
+}
+
+// .option {
+//   display: none;
+// }
+
+
+
+#image-holder {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 5px solid;
+  display: none;
+}
+
+#chatter-holder {
+  padding: 20px 0;
+  line-height: 1.7;
+}
+
+#text-holder-holder {
+  font-size: 18px;
+  display: none;
+  text-align: left;
+}
+
+#text-default-holder {
+  font-size: 26px;
+  text-align: right;
+
+}
+
+
+
+#text-holder-holder span, #text-default-holder span {
+  border-bottom: 3px solid #ddd;
+  font-weight: 800;
+  color:#666;
+
+}

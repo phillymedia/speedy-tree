@@ -1,0 +1,375 @@
+<!--removeIf(pymframe)-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>speedy-tree</title>
+  <link rel="icon" type="image/png" href="//media.philly.com/designimages/favicon-32x32.png">
+
+  <script type="text/javascript" src="http://media.philly.com/storage/inquirer/script/pym.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var pymChild = new pym.Child();
+      pym.Child({ polling: 100 });
+      pymChild.sendHeight();
+    //   var t = setTimeout(function() {
+    //     pymChild.sendHeight();
+    //     console.log("pym Started")
+    //   }, 2000);
+    }, false);
+  </script>
+
+
+</head>
+
+<body>
+  <!--endRemoveIf(pymframe)-->
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+
+<!-- <link rel="stylesheet" href="http://media.philly.com/storage/inquirer/script/leaflet/leaflet-0.7.7-2017.css" /> -->
+
+
+
+
+  <style>
+#graphic_mobile{margin-top:20px;display:none}@media only screen and (max-width:550px){#graphic_mobile{display:block}}.instruct{text-align:center;width:100%;padding-bottom:4px;margin-bottom:10px;border-bottom:1px solid #ddd}.instruct span{font-style:italic}#drop-holder{padding:10px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd}.row{display:flex;padding:5px 0;font-size:20px;line-height:1.5}.row span{padding-right:5px;width:20%}.row select{width:80%;font-size:16px;float:right}#image-holder{width:100%;background-size:cover;background-position:50%;background-repeat:no-repeat;border-bottom:5px solid;display:none}#chatter-holder{padding:20px 0;line-height:1.7}#text-holder-holder{font-size:18px;display:none;text-align:left}#text-default-holder{font-size:26px;text-align:right}#text-default-holder span,#text-holder-holder span{border-bottom:3px solid #ddd;font-weight:800;color:#666}#graphic_desktop{width:100%;max-width:550px;height:550px;position:relative;margin:80px auto}@media only screen and (max-width:550px){#graphic_desktop{display:none}}.circle{padding:0;margin:1em auto;border-radius:50%;list-style:none;overflow:hidden}.circle.back{position:relative;width:100%;padding-bottom:100%;transform:translate(-50%,-50%) rotate(-44deg);z-index:1}.circle.back,.circle.front{margin:0;top:50%;left:50%;display:block}.circle.front{width:95%;padding-bottom:95%;position:absolute;transform:translate(-50%,-50%) rotate(40deg);z-index:2}.circle.display{width:100%;padding-bottom:100%;z-index:0}#img-display,.circle.display{position:absolute;margin:0;top:50%;left:50%;transform:translate(-50%,-50%)}#img-display{z-index:2;width:35%;padding-bottom:35%;border-radius:50%;border:1px solid #fff;background-image:url(http://media.philly.com/storage/inquirer/special%20project%20media/speedy/RS944124_speedymorris.jpg);background-size:cover;background-position:50%;background-color:#fff}#text-default,#text-holder{position:absolute;width:100%;max-width:250px;margin:0;top:50%;left:5%;transform:translate(-50%,-50%);z-index:3;color:#333;line-height:1.6}@media only screen and (max-width:800px){#text-default,#text-holder{max-width:200px;left:10%}}@media only screen and (max-width:720px){#text-default,#text-holder{max-width:30%;left:15%;line-height:1.3}}#text-holder{font-size:14px;display:none;text-align:right}@media only screen and (max-width:720px){#text-holder{font-size:13px}}#text-default{font-size:26px;text-align:right}@media only screen and (max-width:800px){#text-default{font-size:20px}}#text-default span,#text-holder span{border-bottom:3px solid #ddd;font-weight:800;color:#666}@media only screen and (max-width:720px){#text-default span,#text-holder span{border:none;color:#333}}li{overflow:hidden;top:0;right:0;width:50%;height:50%;transform-origin:0 100%}.text-wrap,li{position:absolute}.text-wrap{left:-100%;width:200%;height:200%;text-align:center;-webkit-transform:skewY(78deg) rotate(6deg);transform:skewY(78deg) rotate(6deg);padding-top:20px}.no-flip{transform:rotate(-90deg) translateX(-40px)}.flip{transform:rotate(90deg) translateX(40px)}.back-splice.rch_group{background-color:#3f205b}.back-splice.penn_group{background-color:#f5d351}.back-splice.lsu_group{background-color:#003e6c}.back-splice.sjp_group{background-color:#ab0a31}.front-splice{background-color:#d9d9d9;outline:1px solid #fff;transition:background-color .2s;transition:color background-color .2s}.active{background-color:hsla(0,0%,100%,.3);color:#fff}.inactive{color:#777}.labels{position:absolute;width:100%;height:100%;z-index:4;pointer-events:none}.labels span{position:absolute;text-transform:uppercase;color:#aaa}#rch_label{top:0;position:absolute;left:0;color:#3f205b}@media only screen and (max-width:550px){#rch_label{top:3%}}#penn_label{top:-3%;position:absolute;right:22%;color:#f5d351}@media only screen and (max-width:550px){#penn_label{top:.5%;right:25%}}#lsu_label{top:1%;position:absolute;right:0;color:#003e6c}@media only screen and (max-width:550px){#lsu_label{top:4%}}#sjp_label{bottom:0;position:absolute;left:5%;color:#ab0a31}@media only screen and (max-width:550px){#sjp_label{bottom:3%}}body{font-family:Gotham Narrow SSm A,Gotham Narrow SSm B,Gotham Narrow,Arial,sans-serif;margin:0 auto}.graphicWrapper{padding:25px 10px;margin:20px auto;border-top:1px solid #d9d9d9;border-bottom:1px solid #d9d9d9;max-width:728px}.heading{margin:10px 0;font-size:24px;font-family:GothamXNarrow-Black,Gotham Narrow SSm A,Gotham Narrow SSm B,Gotham Narrow,Arial,sans-serif}.description{padding:0;margin:0;font-size:16px;line-height:1.3rem}.description,.source{font-family:Gotham Narrow SSm A,Gotham Narrow SSm B,Gotham Narrow,Arial,sans-serif}.source{font-size:13px;color:#666;display:block;text-align:left;padding:4px 0 0}.source:first-of-type{padding-top:20px}.credit{text-align:right}.axislabel{font-size:12px;color:#333;font-family:Gotham Narrow SSm A,Gotham Narrow SSm B,Gotham Narrow,Arial,sans-serif}
+</style>
+
+  <div class="graphicWrapper">
+  <h3 class="heading">Speedy Morris: The Man at the Center of Philly Hoops</h3>
+  <p class="description">At least 23 current basketball coaches have played for or coached or managed under Speedy Morris.</p>
+  <p class="description">Here is how they are connected to him.</p>
+
+
+  <div id="graphic_desktop">
+
+
+    <div class="labels">
+      <span id="rch_label">Roman Catholic High</span>
+      <span id="penn_label">Penn Charter</span>
+      <span id="lsu_label">La Salle University</span>
+      <span id="sjp_label">St. Joseph’s Prep</span>
+    </div>
+    <ul class="circle back">
+
+      <li class="back-splice  rch_group " data-group="Roman Catholic High" data-name="Jim O’Brien" data-connection="played for" data-status="current 76ers assistant coach, former Sixers head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944097_obrien_jim headshot.jpg">
+      </li>
+
+      <li class="back-splice  rch_group " data-group="Roman Catholic High" data-name="John Griffin" data-connection="played for" data-status="former St. Joseph’s head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944161_johngriffins.jpg">
+      </li>
+
+      <li class="back-splice  rch_group " data-group="Roman Catholic High" data-name="Randy Monroe" data-connection="played for" data-status=" current St. Joseph’s Prep coach, former La Salle assistant coach, and former Maryland-Baltimore County head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944116_Monroe.jpg">
+      </li>
+
+      <li class="back-splice  rch_group " data-group="Roman Catholic High" data-name="John Miller" data-connection="was an assistant for" data-status="former La Salle women’s and Mount St. Joseph girls coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944129_Miller Head Shot.jpg">
+      </li>
+
+      <li class="back-splice  penn_group " data-group="Penn Charter" data-name="Carl Arrigale" data-connection="played for" data-status="current Neumann-Goretti head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS587491_SNEUMANN24-13.jpg">
+      </li>
+
+      <li class="back-splice  lsu_group " data-group="La Salle University" data-name="Cheryl Reeve" data-connection="played for" data-status="current coach of the WNBA champion Minnesota Lynx and the assistant coach of the 2016 gold medal-winning U.S. Olympic women’s team" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944134_Reeve_Cheryl.jpg">
+      </li>
+
+      <li class="back-splice  lsu_group " data-group="La Salle University" data-name="Joe Mihalich" data-connection="was an assistant coach for" data-status="current Hofstra head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944126_1718Hofstra_MihalichV.jpg">
+      </li>
+
+      <li class="back-splice  lsu_group " data-group="La Salle University" data-name="Fran Dunphy" data-connection="was an assistant coach for" data-status="current Temple head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944108_Dunphy_Fran_20160922_MBB_005.jpg">
+      </li>
+
+      <li class="back-splice  lsu_group " data-group="La Salle University" data-name="Billy Lange" data-connection="was an assistant coach for" data-status="current 76ers assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944095_lange_billy headshot.jpg">
+      </li>
+
+      <li class="back-splice  lsu_group " data-group="La Salle University" data-name="John Gallagher" data-connection="was an assistant coach for" data-status="current University of Hartford head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944136_john gallagher.jpg">
+      </li>
+
+      <li class="back-splice  lsu_group " data-group="La Salle University" data-name="Doug Overton" data-connection="played for" data-status="current Lincoln University head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944125_OvertonMBB.jpg">
+      </li>
+
+      <li class="back-splice  lsu_group " data-group="La Salle University" data-name="Jim Phillips" data-connection="was a manager under" data-status="current Penn Charter head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944138_jim phillips on the right.jpg">
+      </li>
+
+      <li class="back-splice  lsu_group " data-group="La Salle University" data-name="Bron Holland" data-connection="played for" data-status="current Bangor (Pa.) High head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944088_BronHolland.jpg">
+      </li>
+
+      <li class="back-splice  lsu_group " data-group="La Salle University" data-name="Jeff Neubauer" data-connection="played for" data-status="current Fordham head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944145_neubauer.jpg">
+      </li>
+
+      <li class="back-splice  lsu_group " data-group="La Salle University" data-name="Craig Conlin" data-connection="played for" data-status="current Episcopal Academy head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944133_Craig Conlin2.jpg">
+      </li>
+
+      <li class="back-splice  lsu_group " data-group="La Salle University" data-name="Donnie Carr" data-connection="played for" data-status="current La Salle assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944130_Carr Head Shot.jpg">
+      </li>
+
+      <li class="back-splice  lsu_group " data-group="La Salle University" data-name="Keith Morris" data-connection="played for" data-status="current St. Joseph’s Prep assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944121_keith morris.jpg">
+      </li>
+
+      <li class="back-splice  sjp_group " data-group="St. Joseph’s Prep" data-name="Chris Clark" data-connection="played for" data-status="current Temple assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944109_Clark_Chris2016-web.jpg">
+      </li>
+
+      <li class="back-splice  sjp_group " data-group="St. Joseph’s Prep" data-name="John Griffin Jr." data-connection="played for" data-status="current Bucknell assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944090_Griffin_John_HS.jpg">
+      </li>
+
+      <li class="back-splice  sjp_group " data-group="St. Joseph’s Prep" data-name="Colin Curtin" data-connection="was a manager under" data-status="current Hofstra director of basketball operations" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944127_1718Hofstra_CurtinV.jpg">
+      </li>
+
+      <li class="back-splice  sjp_group " data-group="St. Joseph’s Prep" data-name="Matt Dolan" data-connection="played for" data-status="current Dickinson College assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944079_MattDolanDCA_9443.jpg">
+      </li>
+
+      <li class="back-splice  sjp_group " data-group="St. Joseph’s Prep" data-name="Matt Griffin" data-connection="played for" data-status="current Roman Catholic head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS484011_SHAV11-L_343851267.jpg">
+      </li>
+
+      <li class="back-splice  sjp_group " data-group="St. Joseph’s Prep" data-name="Joe Meehan" data-connection="played for" data-status="current Bucknell assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944094_Meehan_Joe_HS.jpg">
+      </li>
+
+    </ul>
+
+    <ul class="circle front">
+      <!-- <div id="img-display"></div>
+        <div id="text-display">
+          <div id="text-holder"><span class="name"></span> the <span class="status"></span> <span class="connection"></span> Speedy Morris</div>
+        </div> -->
+
+      <li class="front-splice" "="" rch_group="" data-group="Roman Catholic High" data-name="Jim O’Brien" data-connection="played for" data-status="current 76ers assistant coach, former Sixers head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944097_obrien_jim headshot.jpg">
+        <div class="text-wrap">
+          <div class="text flip">Jim O’Brien</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" rch_group="" data-group="Roman Catholic High" data-name="John Griffin" data-connection="played for" data-status="former St. Joseph’s head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944161_johngriffins.jpg">
+        <div class="text-wrap">
+          <div class="text flip">John Griffin</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" rch_group="" data-group="Roman Catholic High" data-name="Randy Monroe" data-connection="played for" data-status=" current St. Joseph’s Prep coach, former La Salle assistant coach, and former Maryland-Baltimore County head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944116_Monroe.jpg">
+        <div class="text-wrap">
+          <div class="text flip">Randy Monroe</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" rch_group="" data-group="Roman Catholic High" data-name="John Miller" data-connection="was an assistant for" data-status="former La Salle women’s and Mount St. Joseph girls coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944129_Miller Head Shot.jpg">
+        <div class="text-wrap">
+          <div class="text flip">John Miller</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" penn_group="" data-group="Penn Charter" data-name="Carl Arrigale" data-connection="played for" data-status="current Neumann-Goretti head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS587491_SNEUMANN24-13.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Carl Arrigale</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" lsu_group="" data-group="La Salle University" data-name="Cheryl Reeve" data-connection="played for" data-status="current coach of the WNBA champion Minnesota Lynx and the assistant coach of the 2016 gold medal-winning U.S. Olympic women’s team" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944134_Reeve_Cheryl.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Cheryl Reeve</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" lsu_group="" data-group="La Salle University" data-name="Joe Mihalich" data-connection="was an assistant coach for" data-status="current Hofstra head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944126_1718Hofstra_MihalichV.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Joe Mihalich</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" lsu_group="" data-group="La Salle University" data-name="Fran Dunphy" data-connection="was an assistant coach for" data-status="current Temple head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944108_Dunphy_Fran_20160922_MBB_005.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Fran Dunphy</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" lsu_group="" data-group="La Salle University" data-name="Billy Lange" data-connection="was an assistant coach for" data-status="current 76ers assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944095_lange_billy headshot.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Billy Lange</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" lsu_group="" data-group="La Salle University" data-name="John Gallagher" data-connection="was an assistant coach for" data-status="current University of Hartford head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944136_john gallagher.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">John Gallagher</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" lsu_group="" data-group="La Salle University" data-name="Doug Overton" data-connection="played for" data-status="current Lincoln University head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944125_OvertonMBB.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Doug Overton</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" lsu_group="" data-group="La Salle University" data-name="Jim Phillips" data-connection="was a manager under" data-status="current Penn Charter head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944138_jim phillips on the right.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Jim Phillips</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" lsu_group="" data-group="La Salle University" data-name="Bron Holland" data-connection="played for" data-status="current Bangor (Pa.) High head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944088_BronHolland.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Bron Holland</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" lsu_group="" data-group="La Salle University" data-name="Jeff Neubauer" data-connection="played for" data-status="current Fordham head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944145_neubauer.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Jeff Neubauer</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" lsu_group="" data-group="La Salle University" data-name="Craig Conlin" data-connection="played for" data-status="current Episcopal Academy head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944133_Craig Conlin2.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Craig Conlin</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" lsu_group="" data-group="La Salle University" data-name="Donnie Carr" data-connection="played for" data-status="current La Salle assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944130_Carr Head Shot.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Donnie Carr</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" lsu_group="" data-group="La Salle University" data-name="Keith Morris" data-connection="played for" data-status="current St. Joseph’s Prep assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944121_keith morris.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Keith Morris</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" sjp_group="" data-group="St. Joseph’s Prep" data-name="Chris Clark" data-connection="played for" data-status="current Temple assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944109_Clark_Chris2016-web.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">Chris Clark</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" sjp_group="" data-group="St. Joseph’s Prep" data-name="John Griffin Jr." data-connection="played for" data-status="current Bucknell assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944090_Griffin_John_HS.jpg">
+        <div class="text-wrap">
+          <div class="text no-flip">John Griffin Jr.</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" sjp_group="" data-group="St. Joseph’s Prep" data-name="Colin Curtin" data-connection="was a manager under" data-status="current Hofstra director of basketball operations" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944127_1718Hofstra_CurtinV.jpg">
+        <div class="text-wrap">
+          <div class="text flip">Colin Curtin</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" sjp_group="" data-group="St. Joseph’s Prep" data-name="Matt Dolan" data-connection="played for" data-status="current Dickinson College assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944079_MattDolanDCA_9443.jpg">
+        <div class="text-wrap">
+          <div class="text flip">Matt Dolan</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" sjp_group="" data-group="St. Joseph’s Prep" data-name="Matt Griffin" data-connection="played for" data-status="current Roman Catholic head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS484011_SHAV11-L_343851267.jpg">
+        <div class="text-wrap">
+          <div class="text flip">Matt Griffin</div>
+        </div>
+      </li>
+
+      <li class="front-splice" "="" sjp_group="" data-group="St. Joseph’s Prep" data-name="Joe Meehan" data-connection="played for" data-status="current Bucknell assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944094_Meehan_Joe_HS.jpg">
+        <div class="text-wrap">
+          <div class="text flip">Joe Meehan</div>
+        </div>
+      </li>
+
+    </ul>
+    <div id="img-display"></div>
+    <div id="text-display">
+      <div id="text-default">The <span>coaching legacy</span> of <span>Speedy Morris</span></div>
+      <div id="text-holder"><span class="name"></span>, the <span class="status"></span>, <span class="connection"></span> Speedy Morris at <span class="group"></span>.</div>
+    </div>
+    <div class="circle display">
+
+    </div>
+  </div>
+
+  <div id="graphic_mobile">
+    <div id="drop-holder">
+      <div class="instruct"><span>Choose a school and name combination to view the connection</span></div>
+      <div class="row">
+        <span>School: </span><select id="group-select">
+          <option id="all">View All</option>
+      <option id="rch_group">Roman Catholic High</option>
+      <option id="penn_group">Penn Charter</option>
+      <option id="lsu_group">La Salle University</option>
+      <option id="sjp_group">St. Joseph’s Prep</option>
+    </select>
+      </div>
+      <div class="row">
+        <span>Name: </span><select id="name-select">
+
+      <option class="all option  rch_group " data-group="Roman Catholic High" data-name="Jim O’Brien" data-connection="played for" data-status="current 76ers assistant coach, former Sixers head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944097_obrien_jim headshot.jpg">Jim O’Brien</option>
+
+      <option class="all option  rch_group " data-group="Roman Catholic High" data-name="John Griffin" data-connection="played for" data-status="former St. Joseph’s head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944161_johngriffins.jpg">John Griffin</option>
+
+      <option class="all option  rch_group " data-group="Roman Catholic High" data-name="Randy Monroe" data-connection="played for" data-status=" current St. Joseph’s Prep coach, former La Salle assistant coach, and former Maryland-Baltimore County head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944116_Monroe.jpg">Randy Monroe</option>
+
+      <option class="all option  rch_group " data-group="Roman Catholic High" data-name="John Miller" data-connection="was an assistant for" data-status="former La Salle women’s and Mount St. Joseph girls coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944129_Miller Head Shot.jpg">John Miller</option>
+
+      <option class="all option  penn_group " data-group="Penn Charter" data-name="Carl Arrigale" data-connection="played for" data-status="current Neumann-Goretti head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS587491_SNEUMANN24-13.jpg">Carl Arrigale</option>
+
+      <option class="all option  lsu_group " data-group="La Salle University" data-name="Cheryl Reeve" data-connection="played for" data-status="current coach of the WNBA champion Minnesota Lynx and the assistant coach of the 2016 gold medal-winning U.S. Olympic women’s team" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944134_Reeve_Cheryl.jpg">Cheryl Reeve</option>
+
+      <option class="all option  lsu_group " data-group="La Salle University" data-name="Joe Mihalich" data-connection="was an assistant coach for" data-status="current Hofstra head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944126_1718Hofstra_MihalichV.jpg">Joe Mihalich</option>
+
+      <option class="all option  lsu_group " data-group="La Salle University" data-name="Fran Dunphy" data-connection="was an assistant coach for" data-status="current Temple head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944108_Dunphy_Fran_20160922_MBB_005.jpg">Fran Dunphy</option>
+
+      <option class="all option  lsu_group " data-group="La Salle University" data-name="Billy Lange" data-connection="was an assistant coach for" data-status="current 76ers assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944095_lange_billy headshot.jpg">Billy Lange</option>
+
+      <option class="all option  lsu_group " data-group="La Salle University" data-name="John Gallagher" data-connection="was an assistant coach for" data-status="current University of Hartford head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944136_john gallagher.jpg">John Gallagher</option>
+
+      <option class="all option  lsu_group " data-group="La Salle University" data-name="Doug Overton" data-connection="played for" data-status="current Lincoln University head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944125_OvertonMBB.jpg">Doug Overton</option>
+
+      <option class="all option  lsu_group " data-group="La Salle University" data-name="Jim Phillips" data-connection="was a manager under" data-status="current Penn Charter head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944138_jim phillips on the right.jpg">Jim Phillips</option>
+
+      <option class="all option  lsu_group " data-group="La Salle University" data-name="Bron Holland" data-connection="played for" data-status="current Bangor (Pa.) High head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944088_BronHolland.jpg">Bron Holland</option>
+
+      <option class="all option  lsu_group " data-group="La Salle University" data-name="Jeff Neubauer" data-connection="played for" data-status="current Fordham head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944145_neubauer.jpg">Jeff Neubauer</option>
+
+      <option class="all option  lsu_group " data-group="La Salle University" data-name="Craig Conlin" data-connection="played for" data-status="current Episcopal Academy head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944133_Craig Conlin2.jpg">Craig Conlin</option>
+
+      <option class="all option  lsu_group " data-group="La Salle University" data-name="Donnie Carr" data-connection="played for" data-status="current La Salle assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944130_Carr Head Shot.jpg">Donnie Carr</option>
+
+      <option class="all option  lsu_group " data-group="La Salle University" data-name="Keith Morris" data-connection="played for" data-status="current St. Joseph’s Prep assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944121_keith morris.jpg">Keith Morris</option>
+
+      <option class="all option  sjp_group " data-group="St. Joseph’s Prep" data-name="Chris Clark" data-connection="played for" data-status="current Temple assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944109_Clark_Chris2016-web.jpg">Chris Clark</option>
+
+      <option class="all option  sjp_group " data-group="St. Joseph’s Prep" data-name="John Griffin Jr." data-connection="played for" data-status="current Bucknell assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944090_Griffin_John_HS.jpg">John Griffin Jr.</option>
+
+      <option class="all option  sjp_group " data-group="St. Joseph’s Prep" data-name="Colin Curtin" data-connection="was a manager under" data-status="current Hofstra director of basketball operations" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944127_1718Hofstra_CurtinV.jpg">Colin Curtin</option>
+
+      <option class="all option  sjp_group " data-group="St. Joseph’s Prep" data-name="Matt Dolan" data-connection="played for" data-status="current Dickinson College assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944079_MattDolanDCA_9443.jpg">Matt Dolan</option>
+
+      <option class="all option  sjp_group " data-group="St. Joseph’s Prep" data-name="Matt Griffin" data-connection="played for" data-status="current Roman Catholic head coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS484011_SHAV11-L_343851267.jpg">Matt Griffin</option>
+
+      <option class="all option  sjp_group " data-group="St. Joseph’s Prep" data-name="Joe Meehan" data-connection="played for" data-status="current Bucknell assistant coach" data-image="http://media.philly.com/storage/inquirer/special project media/speedy/RS944094_Meehan_Joe_HS.jpg">Joe Meehan</option>
+
+    </select>
+      </div>
+    </div>
+    <div id="image-holder"></div>
+    <div id="chatter-holder">
+      <div id="text-holder-holder"><span class="name-holder"></span>, the <span class="status-holder"></span>, <span class="connection-holder"></span> Speedy Morris at <span class="group-holder"></span>.</div>
+    </div>
+
+  </div>
+
+  <div class="source">Photo sources: File photographs; Getty images; photos supplied by teams listed</div>
+  <div class="source credit">Credit: JARED WHALEN / Staff</div>
+
+</div>
+ <script src="http://www.philly.com/includes/e32121b31e345f561b84372c2bf06282/jquery-2.0.0b2.js" type="text/javascript"></script>
+
+<!-- <script src="http://media.philly.com/storage/inquirer/script/leaflet/leaflet-0.7.7-2017.js"></script>
+<script src="https://use.fontawesome.com/8208ab3437.js"></script> -->
+
+
+  <script>
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){require("./mobile.js");var degree=360/($(".back-splice").length+7),l=$(".back-splice").length,h=l/2;$(".back-splice, .front-splice").each(function(index){console.log(degree);$(this).css({"-webkit-transform":"rotate("+index*degree+"deg) skewY(-"+(90-12)+"deg)"})});var speedy_img="http://media.philly.com/storage/inquirer/special project media/speedy/RS944124_speedymorris.jpg";$("li").hover(function(){var image=$(this).data("image"),name=$(this).data("name"),status=$(this).data("status"),connection=$(this).data("connection");group=$(this).data("group"),group_joined=group.replace(/ /g,"&nbsp;");$("#img-display").css("background-image",'url("'+image+'")');$("#text-default").hide();$("#text-holder").show();$("#text-holder .name").html(name);$("#text-holder .status").html(status);$("#text-holder .connection").html(connection);$("#text-holder .group").html(group_joined);console.log(group_joined);$(this).addClass("active");$("li").not(this).addClass("inactive");if($(".group").html()==="Roman&nbsp;Catholic&nbsp;High"){$(".group").css("border-color","rgb(63, 32, 91)")}if($(".group").html()==="Penn&nbsp;Charter"){$(".group").css("border-color","rgb(245, 211, 81)")}if($(".group").html()==="La&nbsp;Salle&nbsp;University"){$(".group").css("border-color","rgb(0, 62, 108)")}if($(".group").html()==="St.&nbsp;Joseph’s&nbsp;Prep"){$(".group").css("border-color","rgb(171, 10, 49)")}},function(){$("#img-display").css({"background-image":"url('"+speedy_img+"')"});$("#text-holder").hide();$("#text-default").show();$("li").removeClass("active inactive")})},{"./mobile.js":2}],2:[function(require,module,exports){$("#name-select").val([]);$("#group-select").change(function(){$("#name-select").val([]);var group="."+$(this).find(":selected").attr("id");$(".option").hide();$(group).show()});$("#name-select").change(function(){var selected=$(this).find(":selected"),image=$(selected).data("image"),name=$(selected).data("name"),status=$(selected).data("status"),connection=$(selected).data("connection");group=$(selected).data("group"),group_joined=group.replace(/ /g,"&nbsp;");$("#image-holder").show();$("#image-holder").css("background-image",'url("'+image+'")');$("#text-default-holder").hide();$("#text-holder-holder").show();$("#text-holder-holder .name-holder").html(name);$("#text-holder-holder .status-holder").html(status);$("#text-holder-holder .connection-holder").html(connection);$("#text-holder-holder .group-holder").html(group_joined);if($(".group-holder").html()==="Roman&nbsp;Catholic&nbsp;High"){$(".group-holder, #image-holder").css("border-color","rgb(63, 32, 91)")}if($(".group-holder").html()==="Penn&nbsp;Charter"){$(".group-holder, #image-holder").css("border-color","rgb(245, 211, 81)")}if($(".group-holder").html()==="La&nbsp;Salle&nbsp;University"){$(".group-holder, #image-holder").css("border-color","rgb(0, 62, 108)")}if($(".group-holder").html()==="St.&nbsp;Joseph’s&nbsp;Prep"){$(".group-holder, #image-holder").css("border-color","rgb(171, 10, 49)")}});$(window).resize(function(){var imageW=$("#image-holder ").css("width");$("#image-holder").css("height",imageW)});var imageW=$("#image-holder ").css("width");$("#image-holder").css("height",imageW)},{}]},{},[1]);
+</script>
+
+  <!--removeIf(pymframe)-->
+</body>
+
+</html>
+<!--endRemoveIf(pymframe)-->
